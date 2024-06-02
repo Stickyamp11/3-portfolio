@@ -56,17 +56,75 @@
     margin: 0;
     padding: 0;
   }
-  html,body{
-    margin: 0;
-    padding: 0;
+.language{
+  padding: 2px;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  cursor:pointer;
+
+  
+}
+.language:hover{
+}
+.language--active{
+
+}
+.language__inner{
+  position: absolute;
+border-radius: 100%;
+top: 15%;
+left: 4px;
+width: 14px;
+height: 14px;
+background-color: rgb(5, 5, 5);
+z-index: 4;
+transition: .2s;
+
+}
+.language__inner--active{
+  transform: translateX(16px);
+  transition: .2s;
+  background-color: rgb(218, 28, 28);
+
+
+}
+.changeLanguage{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 200;
+  margin-left: auto;
+
+
+  & > *{
+    margin: 5px;
   }
+}
+
+  .link-container svg{
+    width: 48px;
+    height: 48px;
+    transition: .2s;
+  }
+  .link-text{
+    margin-top: 4px;
+  }
+  .svg--linkedin{
+    filter: brightness(0) saturate(100%) invert(0%) sepia(27%) saturate(7251%) hue-rotate(19deg) brightness(117%) contrast(90%);
+  }
+  .link-container:hover svg{
+    filter: brightness(0) saturate(100%) invert(70%) sepia(17%) saturate(3443%) hue-rotate(175deg) brightness(90%) contrast(83%);
+  }
+
   .main-container{
     display: flex;
     justify-content: center;
     align-self: center;
-    margin: 40px 60px;
-
-
+    padding: 40px 60px;
   }
   .main-container__profile{
     flex: 1 0 40%;
@@ -87,6 +145,8 @@
   .main-container__profile__name{
     font-weight: var(--font-weight-big);
     font-size: var(--font-text-big);
+    display: flex;
+    flex-direction: row;
   }
   .main-container__profile__about{
     color: var(--color-light);
@@ -105,7 +165,7 @@
     flex-direction: row;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin-top: 20%;
+    margin-top: 15%;
   }
   .link-container{
     margin: 10px;
@@ -118,15 +178,14 @@
     justify-content: center;
     align-items: center;
     margin-right: 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,.04);
-    border: 1px solid rgba(0, 0, 0, 0.199);
     transition: .4s;
     border-radius: 10px;
     cursor: pointer;
+    flex: 0 0 10%;
 
   }
   .link-container:hover{
-    transform: scale(105%);
+    transform: scale(110%);
     background-color: #FBFBFB
   }
 
@@ -139,8 +198,7 @@
     gap: 20px;
   }
   .bento__element{
-    width: 340px;
-    height: 340px;
+    aspect-ratio: 1/1;
     box-shadow: 0 2px 4px rgba(0,0,0,.04);
     border: 1px solid rgba(0, 0, 0, 0.199);
     border-radius: 20px;
@@ -150,6 +208,7 @@
     padding: 10px;
     transition: .2s;
     cursor: pointer;
+    flex: 0 0 35%;
   }
   .bento__element:hover{
     transform: scale(105%);
@@ -157,13 +216,31 @@
   .bento__element__tag{
     position: absolute;
     left: 20px;
-    bottom: 20px;
+    top: 20px;
     padding: 5px 10px;
     border-radius: 10px;
     background-color: white;
     border: 1px solid gray;
 
   }
+  .bento--techstack{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+  .bento--techstack__el{
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 5px 10px;
+    color: white;
+    font-weight: 500;
+    margin-right: 4px;
+
+  }
+
   .bento__element__link{
     position: absolute;
     right: 10px;
@@ -183,11 +260,16 @@
   @media screen and (max-width: 1750px){
     .main-container__profile__mylinks{
         justify-content: flex-start;
-        margin-top: 0%;
+        margin-top: 5%;
     }
     .link-container{
-        flex: 0 0 20%;
+        flex: 0 0 10%;
+        margin-left: 0;
+
       }
+    .bento__element{
+      flex: 0 0 40%;
+    }
   }
 
   @media screen and (max-width: 1550px){
@@ -208,31 +290,54 @@
     
       }
       .link-container{
-        flex: 0 0 10%;
+        flex: 0 0 5%;
       }
       .bento__element{
-        flex: 0 0 45%;
+        flex: 0 0 35%;
+      }
+
+      .changeLanguage{
+        position: absolute;
+        top: 20px;
+        right: 20px;
       }
   }
 
   @media screen and (max-width: 900px){
     .bento__element{
-        flex: 0 0 80%;
+        flex: 0 0 60%;
       }
       .link-container{
-        flex: 0 0 20%;
+        flex: 0 0 10%;
+        margin: 5px;
+        padding: 10px;
+      }
+      .main-container__profile__mylinks{
+
+      }
+  }
+  @media screen and (max-width: 700px){
+    .bento__element{
+        flex: 0 0 80%;
       }
   }
 
   @media screen and (max-width: 535px){
     .main-container{
-        margin: 10px;
+        padding: 10px;
     }
       .bento__element{
         background-size: contain;
-        width: 260px;
-        height: 260px;
       }
+
+      .changeLanguage{
+        top: 2px;
+        right: 2px;
+        font-size: 18px;
+        & > *{
+          margin: 2px;
+        }     
+       }
   }
 
   @media screen and (max-width: 400px){
