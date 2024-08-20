@@ -124,10 +124,14 @@ transition: .2s;
     display: flex;
     justify-content: center;
     align-self: center;
-    padding: 40px 20px;
+    padding: 0px 20px;
+    height: 100vh;
   }
   .main-container__profile{
     flex: 1 0 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .main-container__spacer{
     flex: 1 0 0%;
