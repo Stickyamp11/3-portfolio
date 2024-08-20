@@ -130,7 +130,7 @@ transition: .2s;
     flex: 1 0 30%;
   }
   .main-container__spacer{
-    flex: 1 0 5%;
+    flex: 1 0 0%;
 
   }
   .main-container__profile > *{
@@ -243,7 +243,7 @@ transition: .2s;
   .bento__element__link{
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 20px;
     padding-top: 0px;
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -255,7 +255,8 @@ transition: .2s;
   @media screen and (max-width: 1750px){
     .main-container__profile__mylinks{
         justify-content: flex-start;
-        margin-top: 5%;
+        margin-top: 0%;
+        margin-bottom: 0%;
     }
     .link-container{
         flex: 0 0 10%;
@@ -270,9 +271,31 @@ transition: .2s;
   @media screen and (max-width: 1550px){
     .main-container__profile{
         flex: 1 0 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        & > * {
+          flex: 0 0 100%;
+        }
+        & > .main-container__profile__img{
+          flex: 0 0 200px;
+          margin-right: 20px;
+        }
+        & > .wrapper-demo {
+          flex: 0 0 75%;
+        }
+        & > .main-container__profile__position {
+          flex: 0 0 40%;
+          text-align: end;
+        }
+        & > .main-container__profile__mylinks {
+          flex: 0 0 60%;
+        }
       }
       .main-container{
         flex-wrap: wrap;
+        padding: 20px 20px;
       }
       .main-container__spacer{
         flex: 0 0 0%;
@@ -280,9 +303,6 @@ transition: .2s;
       }
       .main-container__profile__mylinks{
         justify-content: center;
-        margin-top: 5%;
-        margin-bottom: 5%;
-    
       }
       .link-container{
         flex: 0 0 5%;
@@ -298,7 +318,26 @@ transition: .2s;
       }
   }
 
-  @media screen and (max-width: 900px){
+  @media screen and (max-width: 950px){
+    .main-container__profile{
+      justify-content: center;
+      & > .main-container__profile__img{
+        order: 1;
+      }
+      & > .wrapper-demo {
+        order: 3;
+        flex: 0 0 90%;
+      }
+      & > .main-container__profile__position {
+        order: 2;
+        flex: 0 0 60%;
+      }
+      & > .main-container__profile__mylinks {
+        order: 4;
+        flex: 0 0 80%;
+      }
+    }
+
     .bento__element{
         flex: 0 0 40%;
       }
@@ -312,9 +351,28 @@ transition: .2s;
       }
   }
   @media screen and (max-width: 600px){
+    .main-container__profile{
+      & > .main-container__profile__img{
+        flex: 0 0 150px;
+      }
+      & > .wrapper-demo {
+      }
+      & > .main-container__profile__position {
+        font-size: 1.2rem;
+        text-align: left;
+      }
+      & > .main-container__profile__mylinks {
+      }
+    }
+    .main-container__profile__name{
+      font-size: 1.5rem;
+    }
+    .main-container__profile__about{
+      font-size: 1.2rem;
+    }
     .bento__element{
         flex: 0 0 80%;
-      }
+    }
   }
 
   @media screen and (max-width: 535px){
@@ -333,7 +391,28 @@ transition: .2s;
           margin: 2px;
         }     
        }
+       .main-container__profile{
+        & > .main-container__profile__img{
+          flex: 0 0 100px;
+        }
+        & > .main-container__profile__mylinks {
+          flex: 0 0 95%;
+        }
+      }
   }
+
+  @media screen and (max-width: 480px){
+    .main-container__profile{
+      & > .main-container__profile__img{
+        margin-right: 5px;
+      }
+      & > .main-container__profile__position{
+        flex: 0 0 55%;
+        font-size: 13px;
+        text-align: end;
+      }
+    }
+}
 
   @media screen and (max-width: 400px){
       .link-container{

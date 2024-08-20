@@ -1,18 +1,20 @@
 <div class="main-container">
   <div class="main-container__profile">
-    <img class="main-container__profile__img" src="../assets/manu.png" width="200" />
-    <div class="main-container__profile__name">
-      <span>Manuel Cortés Serrano </span>
-      <div class="changeLanguage">
-        <div class="language1">English</div>
-        <button class="language" (click)="toogleLanguage()" [ngClass]="{'language--active': isSpanish}">
-          <div class="language__inner" [ngClass]="{'language__inner--active': isSpanish}"></div>
-        </button>
-        <div class="language1">Spanish</div>
-
+    <img class="main-container__profile__img" src="../assets/manu.png" width="200px" />
+    <div class="wrapper-demo">
+      <div class="main-container__profile__name">
+        <span>Manuel Cortés Serrano </span>
+        <div class="changeLanguage">
+          <div class="language1">English</div>
+          <button class="language" (click)="toogleLanguage()" [ngClass]="{'language--active': isSpanish}">
+            <div class="language__inner" [ngClass]="{'language__inner--active': isSpanish}"></div>
+          </button>
+          <div class="language1">Spanish</div>
+  
+        </div>
       </div>
+      <div class="main-container__profile__about">{{selectedTexts.description}}</div>
     </div>
-    <div class="main-container__profile__about">{{selectedTexts.description}}</div>
     <div class="main-container__profile__position">
         <div class="position">{{selectedTexts.position}}</div>
         <div class="experience">{{selectedTexts.experience}}</div>
